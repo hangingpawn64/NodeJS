@@ -1,0 +1,1 @@
+fs.mkdirSync("my-docs");
