@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-// //Syncronous...
+// //Syncronous... Blocking Request
 // fs.writeFileSync('./test.txt',  'helo, World!');
 
-// //Asyncronous...
+// //Asyncronous... Non-Blocking Request
 // fs.writeFile('./test.txt',  'hello, World! Async',(err)=> {});
 
 //     const result = fs.readFileSync('./contacts.txt', 'utf-8'); //--> Sync kuch return krta hai like here result
