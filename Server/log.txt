@@ -15,3 +15,5 @@
 1754929312928: /search_akshit New Req. Recieved
 1754929317971: /search New Req. Recieved
 1754929379902: /search?search_query=breaking+bad New Req. Recieved
+1757076190567: / New Req. Recieved
+1757076202173: /about New Req. Recieved
