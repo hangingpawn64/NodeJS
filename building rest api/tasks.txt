@@ -1,0 +1,19 @@
+REST API - JSON
+
+Prepended /api so that we know if api through kiya to json me response do else html doc
+
+GET /users - Render html document
+GET /api/users - list all users - done
+
+GET /api/users/1 - Get the user with ID 1 -done
+GET /api/users/2 - Get the user with ID 2 -done
+
+DYNAMIC PATH PARAMETERS
+GET /api/users/:id  -done
+:id -> variable | dynamic
+
+POST /api/users - Create new user 
+
+PATCH /api/users/1 - Edit the user with ID1
+
+DELETE /api/users/1 - Delete the user with ID 1
