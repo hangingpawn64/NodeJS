@@ -1,8 +1,13 @@
 const express = require('express');
+const fs = require('fs')
 const users = require("./MOCK_DATA.json")
 
 const app = express();
 const PORT = 8000;
+
+
+// Middleware - Plugin
+app.use(express.urlencoded({ extended: false}));
 
 //Routes 
 app.get("/users", (req,res) => {
@@ -29,18 +34,22 @@ app.get("/api/users/:id", (req, res) => {
 
 app.post("/api/users", (req,res) => {
     //TODO CREATE NEW USER
-    return res.json({status: "pending"})
+    const body = req.body;
+    users.push({...body, id: users.length + 1});
+    fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err, data) =>{
+        return res.json({status: "success", id: users.length + 1});
+    });
 });
 
-app.patch("/api/users/:id", (req,res) => {
-    //TODO EDIT THE USER WITH ID = id
-    return res.json({status: "pending"})
-});
+// app.patch("/api/users/:id", (req,res) => {
+//     //TODO EDIT THE USER WITH ID = id
+//     return res.json({status: "pending"})
+// });
 
-app.delete("/api/users/:id", (req,res) => {
-    //TODO DELETE THE USER WITH ID = id
-    return res.json({status: "pending"})
-});
+// app.delete("/api/users/:id", (req,res) => {
+//     //TODO DELETE THE USER WITH ID = id
+//     return res.json({status: "pending"})
+// });
 
 // WE CAN SEE app.get, app.post, app.patch, app.delete have same path "/api/users/:id"
 // so we can use app.route() to combine them
