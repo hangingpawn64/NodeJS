@@ -1,13 +1,5 @@
 [
   {
-    "id": 1,
-    "first_name": "Jany",
-    "last_name": "Hambright",
-    "email": "jhambright0@vkontakte.ru",
-    "gender": "Agender",
-    "job": "Dental Hygienist"
-  },
-  {
     "id": 2,
     "first_name": "Page",
     "last_name": "Cogzell",
@@ -8004,7 +7996,7 @@
     "last_name": "Tupkar",
     "email": "akshittupkar8@gmail.com",
     "gender": "male",
-    "job": "Student",
+    "job": "Web developer intern",
     "id": 1001
   },
   {
@@ -8014,6 +8006,21 @@
     "gender": "male",
     "job": "dev",
     "id": 1002
+  },
+  {
+    "first_name": "john",
+    "last_name": "doe",
+    "email": "email@example.com",
+    "gender": "male",
+    "job": "dev",
+    "id": 1003
+  },
+  {
+    "first_name": "Tony",
+    "last_name": "Stark",
+    "email": "tonystark@avengers.com",
+    "gender": "male",
+    "job": "ironman",
+    "id": 1004
   }
 ]
-                                      
