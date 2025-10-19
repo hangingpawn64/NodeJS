@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs')
-const users = require("./MOCK_DATA.json")
+const users = require("./MOCK_DATA.json");
+const { json } = require('stream/consumers');
 
 const app = express();
 const PORT = 8000;
@@ -28,7 +29,7 @@ app.get("/api/users/:id", (req, res) => {
     const id = Number(req.params.id);
     const user = users.find((user) => user.id === id);
     if(!user){
-        return res.status(404);
+        return res.status(404).json({error: "user not found"});
     }
     return res.json(user);
 });
@@ -36,9 +37,12 @@ app.get("/api/users/:id", (req, res) => {
 app.post("/api/users", (req,res) => {
     //TODO CREATE NEW USER
     const body = req.body;
+    if(!body || !body.first_name || !body.last_name || !body.email || !body.job || !body.gender){
+        return res.status(400),json({msg: "all fields are required*"})
+    }
     users.push({...body, id: users.length + 1});
     fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err, data) =>{
-        return res.json({status: "success", id: users.length + 1});
+        return res.status(201).json({status: "success", id: users.length + 1});
     });
 });
 
